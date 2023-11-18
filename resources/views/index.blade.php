@@ -15,17 +15,17 @@
         <div class="carousel-inner rounded">
             <a href="/">
                 <div class="carousel-item active">
-                    <img src="img/promo1.jpg" class="d-block w-80" alt="promo1">
+                    <img src="img/promo1.jpg" class="d-block w-80 rounded" alt="promo1">
                 </div>
             </a>
             <a href="/top-up">
                 <div class="carousel-item">
-                    <img src="img/promo2.jpg" class="d-block w-80" alt="promo2">
+                    <img src="img/promo2.jpg" class="d-block w-80 rounded" alt="promo2">
                 </div>
             </a>
             <a href="/promo">
                 <div class="carousel-item">
-                    <img src="img/promo3.jpg" class="d-block w-80" alt="promo3">
+                    <img src="img/promo3.jpg" class="d-block w-80 rounded" alt="promo3">
                 </div>
             </a>
         </div>
@@ -40,6 +40,10 @@
             <span class="visually-hidden">Next</span>
         </button>
     </center>
+</div>
+
+<div class="container">
+
 </div>
 
 @endsection

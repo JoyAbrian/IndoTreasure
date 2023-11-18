@@ -8,8 +8,8 @@
             <div class="input-group has-validation ms-3">
                 <span class="input-group-text"><i class="bi bi-search"></i></span>
                 <div class="form-floating">
-                    <input type="text" class="form-control custom-search-input" id="floatingInputGroup2" placeholder="Pencarian..." required>
-                    <label for="floatingInputGroup2">Pencarian...</label>
+                    <input type="text" class="form-control custom-search-input" id="floatingInputGroup2" placeholder="{{ $search }}" required>
+                    <label for="floatingInputGroup2">{{ $search }}</label>
                 </div>
             </div>
         </div>

@@ -14,5 +14,15 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('index');
+    return view('index', [
+        "title" => "Top 1 E-Commerce In Indonesia",
+        "search" => "Cari di IndoTreasure"
+    ]);
+});
+
+Route::get('/top-up', function () {
+    return view('topup', [
+        "title" => "Top Up",
+        "search" => "Cari produk digital"
+    ]);
 });
