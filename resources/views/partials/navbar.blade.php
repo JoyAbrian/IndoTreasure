@@ -1,4 +1,4 @@
-<nav class="navbar" style="background-color: #004080">
+<nav class="navbar sticky-top" style="background-color: #004080">
     <div class="container-fluid d-flex justify-content-between align-items-center">
         <a class="navbar-brand" href="/">
             <img src="img/word.png" alt="Logo" width="250" class="d-inline-block align-text-top">

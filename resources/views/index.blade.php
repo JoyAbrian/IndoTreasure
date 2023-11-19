@@ -11,7 +11,6 @@
         <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"
             aria-label="Slide 3"></button>
     </div>
-    <center>
         <div class="carousel-inner rounded">
             <a href="/">
                 <div class="carousel-item active">
@@ -39,8 +38,7 @@
             <span class="carousel-control-next-icon" aria-hidden="true"></span>
             <span class="visually-hidden">Next</span>
         </button>
-    </center>
-</div>
+    </div>
 
 <div class="container">
 
