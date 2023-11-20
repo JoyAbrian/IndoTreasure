@@ -3,7 +3,7 @@
 @section('container')
 
 <div class="container container-light" role="alert">
-    <h1>Beli produk digital dll hanya di IndoTreasure</h1>
+    <h1>Beli produk digital hanya di IndoTreasure</h1>
     <h3>Tersedia pulsa, top up, hingga bayar pajak</h3>
 </div>
 
