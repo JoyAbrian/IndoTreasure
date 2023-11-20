@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\TopUp;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -27,16 +28,34 @@ Route::get('/top-up', function () {
     ]);
 });
 
-Route::get('/top-up/pulsa', function () {
-    return view('top-up.pulsa', [
-        "title" => "Beli Pulsa",
-        "search" => "Cari produk digital"
-    ]);
-}); 
-
 Route::get('/top-up/paket-data', function () {
     return view('top-up.paketData', [
         "title" => "Beli Paket Data",
-        "search" => "Cari produk digital"
+        "search" => "Cari produk digital",
+        "topup" => TopUp::all()->where('top_up_category_id', 1)
+    ]);
+}); 
+
+Route::get('/top-up/pulsa', function () {
+    return view('top-up.pulsa', [
+        "title" => "Beli Pulsa",
+        "search" => "Cari produk digital",
+        "topup" => TopUp::all()->where('top_up_category_id', 2)
+    ]);
+}); 
+
+Route::get('/top-up/telepon', function () {
+    return view('top-up.telepon', [
+        "title" => "Beli Paket Telepon",
+        "search" => "Cari produk digital",
+        "topup" => TopUp::all()->where('top_up_category_id', 3)
+    ]);
+}); 
+
+Route::get('/top-up/roaming', function () {
+    return view('top-up.roaming', [
+        "title" => "Beli Paket Roaming",
+        "search" => "Cari produk digital",
+        "topup" => TopUp::all()->where('top_up_category_id', 4)
     ]);
 }); 

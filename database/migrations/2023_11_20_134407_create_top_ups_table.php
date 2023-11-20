@@ -13,8 +13,9 @@ return new class extends Migration
     {
         Schema::create('top_ups', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('category_id');
-            $table->string('name');
+            $table->foreignId('top_up_category_id');
+            $table->string('name')->unique();
+            $table->string('slug')->unique();
             $table->integer('price');
             $table->timestamps();
         });
