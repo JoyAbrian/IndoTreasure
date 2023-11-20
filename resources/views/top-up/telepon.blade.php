@@ -2,7 +2,7 @@
 
 @section('container')
 
-<h3>Beli Paket Data</h3>
+<h3>{{ $title }}</h3>
 <div class="col-lg-6">
     <div class="input-group mb-3">
         <span class="input-group-text">Nomor Telepon</span>

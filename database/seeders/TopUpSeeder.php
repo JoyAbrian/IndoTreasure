@@ -393,13 +393,6 @@ class TopUpSeeder extends Seeder
 
         TopUp::create([
             'top_up_category_id' => '7',
-            'name' => '60 UC',
-            'slug' => 'pubg-60-uc',
-            'price' => 18000,
-        ]);
-
-        TopUp::create([
-            'top_up_category_id' => '7',
             'name' => '660 UC',
             'slug' => 'pubg-660-uc',
             'price' => 180000,
@@ -459,7 +452,7 @@ class TopUpSeeder extends Seeder
         TopUp::create([
             'top_up_category_id' => '9',
             'name' => 'MCPACK 1720 Coins',
-            'slug' => 'mc-java-bedrock',
+            'slug' => 'mc-1720-coins',
             'price' => 155000,
         ]);
 
@@ -780,7 +773,7 @@ class TopUpSeeder extends Seeder
         TopUp::create([
             'top_up_category_id' => '15',
             'name' => '150000IDR OVO',
-            'slug' => 'sp-150000-idr',
+            'slug' => 'ovo-150000-idr',
             'price' => 150000,
         ]);
 

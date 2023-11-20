@@ -59,3 +59,124 @@ Route::get('/top-up/roaming', function () {
         "topup" => TopUp::all()->where('top_up_category_id', 4)
     ]);
 }); 
+
+Route::get('/top-up/mobile-legends', function () {
+    return view('top-up.mobilelegends', [
+        "title" => "Top-Up Mobile Legends",
+        "search" => "Cari produk digital",
+        "topup" => TopUp::all()->where('top_up_category_id', 5)
+    ]);
+}); 
+
+Route::get('/top-up/free-fire', function () {
+    return view('top-up.freefire', [
+        "title" => "Top-Up Free Fire",
+        "search" => "Cari produk digital",
+        "topup" => TopUp::all()->where('top_up_category_id', 6)
+    ]);
+}); 
+
+Route::get('/top-up/pubg', function () {
+    return view('top-up.pubg', [
+        "title" => "Top-Up PUBG",
+        "search" => "Cari produk digital",
+        "topup" => TopUp::all()->where('top_up_category_id', 7)
+    ]);
+}); 
+
+Route::get('/top-up/point-blank', function () {
+    return view('top-up.pointblank', [
+        "title" => "Top-Up Point Blank",
+        "search" => "Cari produk digital",
+        "topup" => TopUp::all()->where('top_up_category_id', 8)
+    ]);
+}); 
+
+Route::get('/top-up/minecraft', function () {
+    return view('top-up.minecraft', [
+        "title" => "Top-Up Minecraft",
+        "search" => "Cari produk digital",
+        "topup" => TopUp::all()->where('top_up_category_id', 9)
+    ]);
+}); 
+
+Route::get('/top-up/efootball', function () {
+    return view('top-up.efootball', [
+        "title" => "Top-Up eFootball 2024",
+        "search" => "Cari produk digital",
+        "topup" => TopUp::all()->where('top_up_category_id', 10)
+    ]);
+}); 
+
+Route::get('/top-up/steam', function () {
+    return view('top-up.steam', [
+        "title" => "Beli Steam Wallet",
+        "search" => "Cari produk digital",
+        "topup" => TopUp::all()->where('top_up_category_id', 11)
+    ]);
+}); 
+
+Route::get('/top-up/playstation', function () {
+    return view('top-up.playstation', [
+        "title" => "Beli PlayStation Gift",
+        "search" => "Cari produk digital",
+        "topup" => TopUp::all()->where('top_up_category_id', 12)
+    ]);
+}); 
+
+Route::get('/top-up/dana', function () {
+    return view('top-up.dana', [
+        "title" => "Top Up Dana",
+        "search" => "Cari produk digital",
+        "topup" => TopUp::all()->where('top_up_category_id', 13)
+    ]);
+}); 
+
+Route::get('/top-up/gopay', function () {
+    return view('top-up.gopay', [
+        "title" => "Top Up GoPay",
+        "search" => "Cari produk digital",
+        "topup" => TopUp::all()->where('top_up_category_id', 14)
+    ]);
+}); 
+
+Route::get('/top-up/ovo', function () {
+    return view('top-up.ovo', [
+        "title" => "Top Up OVO",
+        "search" => "Cari produk digital",
+        "topup" => TopUp::all()->where('top_up_category_id', 15)
+    ]);
+}); 
+
+Route::get('/top-up/shopee', function () {
+    return view('top-up.shopee', [
+        "title" => "Top Up ShopeePay",
+        "search" => "Cari produk digital",
+        "topup" => TopUp::all()->where('top_up_category_id', 16)
+    ]);
+}); 
+
+Route::get('/top-up/netflix', function () {
+    return view('top-up.netflix', [
+        "title" => "Subscription Netflix",
+        "search" => "Cari produk digital",
+        "topup" => TopUp::all()->where('top_up_category_id', 17)
+    ]);
+}); 
+
+Route::get('/top-up/disney', function () {
+    return view('top-up.disney', [
+        "title" => "Subscription Disney+ Hotstar",
+        "search" => "Cari produk digital",
+        "topup" => TopUp::all()->where('top_up_category_id', 18)
+    ]);
+}); 
+
+Route::get('/top-up/spotify', function () {
+    return view('top-up.spotify', [
+        "title" => "Subscription Spotify",
+        "search" => "Cari produk digital",
+        "topup" => TopUp::all()->where('top_up_category_id', 19)
+    ]);
+}); 
+
