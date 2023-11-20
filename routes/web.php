@@ -21,8 +21,15 @@ Route::get('/', function () {
 });
 
 Route::get('/top-up', function () {
-    return view('topup', [
+    return view('topup.index', [
         "title" => "Top Up",
         "search" => "Cari produk digital"
     ]);
 });
+
+Route::get('/top-up/pulsa', function () {
+    return view('topup.pulsa', [
+        "title" => "Beli Pulsa",
+        "search" => "Cari produk digital"
+    ]);
+}); 
