@@ -22,7 +22,7 @@
                     <img src="img/promo2.jpg" class="d-block w-80 rounded" alt="promo2">
                 </div>
             </a>
-            <a href="/promo">
+            <a href="/food">
                 <div class="carousel-item">
                     <img src="img/promo3.jpg" class="d-block w-80 rounded" alt="promo3">
                 </div>

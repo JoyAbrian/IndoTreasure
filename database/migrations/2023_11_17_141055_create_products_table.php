@@ -16,12 +16,14 @@ return new class extends Migration
             $table->foreignId('category_id');
             $table->foreignId('user_id');
             $table->string('productName');
-            $table->integer('price');
+            $table->float('price');
             $table->string('slug')->unique();
             $table->string('image')->nullable();
             $table->text('description');
-            $table->text('garansi');
+            $table->string('garansi');
             $table->text('notes');
+            $table->integer('quantity');
+            $table->float('rating');
             $table->timestamp('published_at')->nullable();
             $table->timestamps();
         });

@@ -180,3 +180,16 @@ Route::get('/top-up/spotify', function () {
     ]);
 }); 
 
+Route::get('/login', function () {
+    return view('login', [
+        "title" => "Login Page",
+        "search" => "Cari di IndoTreasure",
+    ]);
+}); 
+
+Route::get('/register', function () {
+    return view('register', [
+        "title" => "Register Page",
+        "search" => "Cari di IndoTreasure",
+    ]);
+}); 
