@@ -16,7 +16,6 @@ return new class extends Migration
             $table->foreignId('top_up_category_id');
             $table->string('name', 46)->unique();
             $table->string('slug', 46)->unique();
-            $table->string('images');
             $table->integer('price');
             $table->timestamps();
         });

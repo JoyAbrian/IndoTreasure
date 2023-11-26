@@ -23,7 +23,7 @@ return new class extends Migration
             $table->string('street');
             $table->string('city');
             $table->string('state');
-            $table->string('postal_code');
+            $table->integer('postal_code');
             $table->string('role')->default("user");
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');

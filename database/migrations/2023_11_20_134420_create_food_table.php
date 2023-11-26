@@ -16,6 +16,7 @@ return new class extends Migration
             $table->string('name', 46);
             $table->string('slug', 46)->unique();
             $table->text('description');
+            $table->string('images');
             $table->float('price');
             $table->timestamps();
         });

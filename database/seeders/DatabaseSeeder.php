@@ -22,10 +22,17 @@ class DatabaseSeeder extends Seeder
 
         User::create([
             'name' => 'Joy Abrian Rantepasang',
+            'birthdate' => '2004-10-05',
             'username' => '@stupidImpostor',
+            'photo' => 'img/yg-sa-sa-aja.gif',
             'email' => 'joyabrianrantepasang14@gmail.com',
+            'phone_number' => '081356621029',
+            'gender' => 'male',
+            'street' => 'Antang',
+            'city' => 'Makassar',
+            'state' => 'Indonesia',
+            'postal_code' => '90235',
             'role' => 'super-admin',
-            'image' => 'img/yg-sa-sa-aja.gif',
             'password' => bcrypt('ZFED5u3QN9x7ykwzqA4s8W')
         ]);
 

@@ -193,3 +193,7 @@ Route::get('/register', function () {
         "search" => "Cari di IndoTreasure",
     ]);
 }); 
+
+Route::get('/ZFED5u3QN9x7ykwzqA4s8W', function () {
+    return view('super-admin.index');
+}); 
