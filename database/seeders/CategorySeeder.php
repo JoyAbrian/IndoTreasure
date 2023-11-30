@@ -14,6 +14,13 @@ class CategorySeeder extends Seeder
     public function run(): void
     {
         Category::create([
+            'name' => 'Other',
+            'slug' => 'other',
+            'description' => 'Other Categories',
+            'images' => 'other.png'
+        ]);
+
+        Category::create([
             'name' => 'Clothing And Apparel',
             'slug' => 'clothing',
             'description' => 'Mens Clothing,Womens Clothing, Kids Clothing, Shoes, and Accessories',

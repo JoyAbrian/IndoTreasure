@@ -16,8 +16,12 @@ return new class extends Migration
             $table->string('name', 46);
             $table->string('slug', 46);
             $table->text('bio');
+            $table->string('images')->default('ppDefault.png');
+            $table->string('banner')->default('bannerDefault.png');
+            $table->foreignId('seller_category')->default(1);
             $table->string('address');
             $table->string('email')->unique();
+            $table->string('password');
             $table->string('phone_number')->unique();
             $table->timestamps();
         });
