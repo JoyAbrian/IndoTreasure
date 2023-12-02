@@ -14,8 +14,8 @@ return new class extends Migration
         Schema::create('sellers', function (Blueprint $table) {
             $table->id();
             $table->string('name', 46);
-            $table->string('slug', 46);
-            $table->text('bio');
+            $table->string('slug', 46)->unique();
+            $table->text('bio')->default('');
             $table->string('images')->default('ppDefault.png');
             $table->string('banner')->default('bannerDefault.png');
             $table->foreignId('seller_category')->default(1);
