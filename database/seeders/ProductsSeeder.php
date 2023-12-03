@@ -1108,11 +1108,11 @@ class ProductsSeeder extends Seeder
         Products::create([
             'seller_id' => 29,
             'category_id' => 1,
-            'productName' => '',
+            'productName' => 'Kunci kebahagiaan akhirat dan dunia,  100% terjamin',
             'slug' => 'kunci-masuk-surga-dijamin-masuk-surga-100-terpercaya',
             'price' => 5000,
             'image' => 'iseng1.jpg',
-            'description' => 'Kunci kebahagiaan akhirat dan dunia,  100% terjamin ',
+            'description' => '',
             'notes' => '',
             'quantity' => 1000,
             'rating' => 0

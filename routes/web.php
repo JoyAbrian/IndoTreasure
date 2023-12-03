@@ -1,6 +1,7 @@
 <?php
 
 use App\Models\Category;
+use App\Models\Products;
 use App\Models\Seller;
 use App\Models\TopUp;
 use Illuminate\Support\Facades\Route;
@@ -21,7 +22,24 @@ Route::get('/', function () {
         "title" => "Top 1 E-Commerce In Indonesia",
         "search" => "Cari di IndoTreasure",
         "categories" => Category::all(),
-        "sellers" => Seller::all()
+        "sellers" => Seller::all(),
+        "products" => Products::all()
+    ]);
+});
+
+Route::get('/category', function () {
+    return view('categories', [
+        "title" => "Kategori",
+        "search" => "Cari berdasarkan kategori",
+        "categories" => Category::all(),
+    ]);
+});
+
+Route::get('/seller', function () {
+    return view('sellers', [
+        "title" => "Kategori",
+        "search" => "Cari berdasarkan penjual",
+        "sellers" => Seller::all(),
     ]);
 });
 
