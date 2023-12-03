@@ -14,10 +14,10 @@ return new class extends Migration
         Schema::create('payments', function (Blueprint $table) {
             $table->id();
             $table->foreignId('product_id');
-            $table->foreignId('user_id');
-            $table->string('method');
-            $table->string('status');
-            $table->float('amount');
+            $table->foreignId('alamat_id');
+            $table->enum('method', ['cod', 'e-money']);
+            $table->enum('status', ['failed', 'success']);
+            $table->double('amount', 10, 2);
             $table->timestamps();
         });
     }

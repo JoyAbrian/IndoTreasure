@@ -17,7 +17,7 @@ return new class extends Migration
             $table->foreignId('category_id');
             $table->string('productName');
             $table->string('slug')->unique();
-            $table->integer('price');
+            $table->double('price', 10, 2);
             $table->string('image')->default('noImage.png');
             $table->text('description')->default('');
             $table->text('notes')->default('');

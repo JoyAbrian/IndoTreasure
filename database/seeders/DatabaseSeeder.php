@@ -23,18 +23,81 @@ class DatabaseSeeder extends Seeder
         User::create([
             'name' => 'Joy Abrian Rantepasang',
             'birthdate' => '2004-10-05',
-            'username' => '@stupidImpostor',
+            'username' => 'stupidImpostor',
             'email' => 'joyabrianrantepasang14@gmail.com',
-            'phone_number' => '081356621029',
+            'primary_phone_number' => '081356621029',
             'gender' => 'Male',
-            'street' => 'Antang',
-            'city' => 'Makassar',
-            'state' => 'Indonesia',
-            'postal_code' => '90235',
             'role' => 'super-admin',
             'password' => bcrypt('ZFED5u3QN9x7ykwzqA4s8W')
         ]);
 
-        
+        User::create([
+            'name' => 'Andi Muh. Haikal Lukman',
+            'birthdate' => '',
+            'username' => 'dccal',
+            'email' => '',
+            'primary_phone_number' => '',
+            'gender' => '',
+            'role' => 'admin',
+            'password' => bcrypt('')
+        ]);
+
+        User::create([
+            'name' => 'Henokh Abhinaya Tjahjadi',
+            'birthdate' => '',
+            'username' => 'enoch',
+            'email' => '',
+            'primary_phone_number' => '',
+            'gender' => '',
+            'role' => 'admin',
+            'password' => bcrypt('')
+        ]);
+
+        User::create([
+            'name' => 'Mayko Raditya Wirawan',
+            'birthdate' => '',
+            'username' => 'h3nry',
+            'email' => '',
+            'primary_phone_number' => '',
+            'gender' => '',
+            'role' => 'admin',
+            'password' => bcrypt('')
+        ]);
+
+        User::create([
+            'name' => 'Muhammad Nabil Shadiq',
+            'birthdate' => '',
+            'username' => 'naaoi',
+            'email' => '',
+            'primary_phone_number' => '',
+            'gender' => '',
+            'role' => 'admin',
+            'password' => bcrypt('')
+        ]);
+
+        User::create([
+            'name' => 'Muhammad Ilham Syahfithrah Hendra',
+            'birthdate' => '',
+            'username' => 'nito',
+            'email' => '',
+            'primary_phone_number' => '',
+            'gender' => '',
+            'role' => 'admin',
+            'password' => bcrypt('')
+        ]);
+
+        User::create([
+            'name' => 'Andi Ahmad Salwan Farid',
+            'birthdate' => '',
+            'username' => 'sal1',
+            'email' => '',
+            'primary_phone_number' => '',
+            'gender' => '',
+            'role' => 'admin',
+            'password' => bcrypt('')
+        ]);
+
+        User::factory(23)->create();
+
     }
 }
