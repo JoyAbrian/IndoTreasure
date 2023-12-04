@@ -37,9 +37,9 @@ class DatabaseSeeder extends Seeder
             'username' => 'dccal',
             'email' => '',
             'primary_phone_number' => '',
-            'gender' => '',
+            'gender' => 'Male',
             'role' => 'admin',
-            'password' => bcrypt('')
+            'password' => bcrypt('SorryYaAkuMabok')
         ]);
 
         User::create([
@@ -48,9 +48,9 @@ class DatabaseSeeder extends Seeder
             'username' => 'enoch',
             'email' => '',
             'primary_phone_number' => '',
-            'gender' => '',
+            'gender' => 'Male',
             'role' => 'admin',
-            'password' => bcrypt('')
+            'password' => bcrypt('SorryYaAkuMabok')
         ]);
 
         User::create([
@@ -59,9 +59,9 @@ class DatabaseSeeder extends Seeder
             'username' => 'h3nry',
             'email' => '',
             'primary_phone_number' => '',
-            'gender' => '',
+            'gender' => 'Male',
             'role' => 'admin',
-            'password' => bcrypt('')
+            'password' => bcrypt('SorryYaAkuMabok')
         ]);
 
         User::create([
@@ -70,9 +70,9 @@ class DatabaseSeeder extends Seeder
             'username' => 'naaoi',
             'email' => '',
             'primary_phone_number' => '',
-            'gender' => '',
+            'gender' => 'Male',
             'role' => 'admin',
-            'password' => bcrypt('')
+            'password' => bcrypt('SorryYaAkuMabok')
         ]);
 
         User::create([
@@ -81,9 +81,9 @@ class DatabaseSeeder extends Seeder
             'username' => 'nito',
             'email' => '',
             'primary_phone_number' => '',
-            'gender' => '',
+            'gender' => 'Male',
             'role' => 'admin',
-            'password' => bcrypt('')
+            'password' => bcrypt('SorryYaAkuMabok')
         ]);
 
         User::create([
@@ -92,9 +92,9 @@ class DatabaseSeeder extends Seeder
             'username' => 'sal1',
             'email' => '',
             'primary_phone_number' => '',
-            'gender' => '',
+            'gender' => 'Male',
             'role' => 'admin',
-            'password' => bcrypt('')
+            'password' => bcrypt('SorryYaAkuMabok')
         ]);
 
         User::factory(23)->create();

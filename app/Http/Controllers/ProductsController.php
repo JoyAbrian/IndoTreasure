@@ -13,7 +13,7 @@ class ProductsController extends Controller
      */
     public function index()
     {
-        //
+        // 
     }
 
     /**
@@ -37,7 +37,11 @@ class ProductsController extends Controller
      */
     public function show(Products $products)
     {
-        //
+        return view('product', [
+            "title" => $products->productName,
+            "search" => "Cari produk lain",
+            "products" => $products,
+        ]);
     }
 
     /**

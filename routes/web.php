@@ -1,10 +1,11 @@
 <?php
 
+use App\Models\TopUp;
+use App\Models\Seller;
 use App\Models\Category;
 use App\Models\Products;
-use App\Models\Seller;
-use App\Models\TopUp;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ProductsController;
 
 /*
 |--------------------------------------------------------------------------
@@ -27,6 +28,10 @@ Route::get('/', function () {
     ]);
 });
 
+Route::get('/food', function () {
+    return view('foods');
+});
+
 Route::get('/category', function () {
     return view('categories', [
         "title" => "Kategori",
@@ -37,11 +42,13 @@ Route::get('/category', function () {
 
 Route::get('/seller', function () {
     return view('sellers', [
-        "title" => "Kategori",
+        "title" => "Toko",
         "search" => "Cari berdasarkan penjual",
         "sellers" => Seller::all(),
     ]);
 });
+
+Route::get('/{products:slug}', [ProductsController::class, 'show']);
 
 Route::get('/top-up', function () {
     return view('top-up.index', [

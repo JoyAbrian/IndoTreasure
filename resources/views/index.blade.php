@@ -80,7 +80,7 @@
     <h2>Product</h2>
     <div class="row row-cols-1 row-cols-md-3 g-4">
         @foreach($products as $product)
-        <a href="/seller/{{ $product->seller->slug }}/{{ $product->slug }}">
+        <a href="/{{ $product->slug }}">
             <div class="col">
                 <div class="card">
                     <img src="img/for-seeder/product/{{ $product->image }}" class="card-img-top" alt="{{ $product->name }}">
