@@ -6,9 +6,35 @@ use Illuminate\Http\Request;
 
 class AdminDashboard extends Controller
 {
-    // public function superAdmin_dashboard() {
-    //     return view('admin-dashboard.ruukaze-super.index');
-    // }
+    // Super Admin
+    public function superAdmin_dashboard() {
+        return view('admin-dashboard.ruukaze-super.index');
+    }
+
+    public function superAdmin_user() {
+        return view('admin-dashboard.ruukaze-super.index');
+    }
+
+    public function superAdmin_admin() {
+        return view('admin-dashboard.ruukaze-super.index');
+    }
+
+    public function superAdmin_toko() {
+        return view('admin-dashboard.ruukaze-super.index');
+    }
+
+    public function superAdmin_produk() {
+        return view('admin-dashboard.ruukaze-super.index');
+    }
+
+    public function superAdmin_kategori() {
+        return view('admin-dashboard.ruukaze-super.index');
+    }
+
+    public function superAdmin_pesanan() {
+        return view('admin-dashboard.ruukaze-super.index');
+    }
+
 
     // Admin Biasa
     public function admin_dashboard() {

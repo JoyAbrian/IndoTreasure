@@ -232,4 +232,11 @@ Route::get('/admin-dashboard/toko', [AdminDashboard::class, 'admin_toko']);
 Route::get('/admin-dashboard/produk', [AdminDashboard::class, 'admin_produk']);
 Route::get('/admin-dashboard/kategori', [AdminDashboard::class, 'admin_kategori']);
 Route::get('/admin-dashboard/pesanan', [AdminDashboard::class, 'admin_pesanan']);
-// Route::get('/ZFED5u3QN9x7ykwzqA4s8W', [AdminDashboard::class, 'superAdmin_dashboard']);
+
+Route::get('/ZFED5u3QN9x7ykwzqA4s8W', [AdminDashboard::class, 'superAdmin_dashboard']);
+Route::get('/ZFED5u3QN9x7ykwzqA4s8W/user', [AdminDashboard::class, 'superAdmin_user']);
+Route::get('/ZFED5u3QN9x7ykwzqA4s8W/user', [AdminDashboard::class, 'superAdmin_admin']);
+Route::get('/ZFED5u3QN9x7ykwzqA4s8W/toko', [AdminDashboard::class, 'superAdmin_toko']);
+Route::get('/ZFED5u3QN9x7ykwzqA4s8W/produk', [AdminDashboard::class, 'superAdmin_produk']);
+Route::get('/ZFED5u3QN9x7ykwzqA4s8W/kategori', [AdminDashboard::class, 'superAdmin_kategori']);
+Route::get('/ZFED5u3QN9x7ykwzqA4s8W/pesanan', [AdminDashboard::class, 'superAdmin_pesanan']);
