@@ -17,7 +17,7 @@ class SellerController extends Controller
             "title" => "Toko",
             "search" => "Cari berdasarkan penjual",
             "sellers" => Seller::inRandomOrder()->get(),
-        ]);    
+        ]);
     }
 
     /**

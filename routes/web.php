@@ -8,6 +8,7 @@ use App\Models\Products;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\ProductsController;
+use App\Http\Controllers\SellerDashboard;
 
 /*
 |--------------------------------------------------------------------------
@@ -20,6 +21,7 @@ use App\Http\Controllers\ProductsController;
 |
 */
 
+// Guest / Buyer Section
 Route::get('/', function () {
     return view('index', [
         "title" => "Top 1 E-Commerce In Indonesia",
@@ -30,197 +32,199 @@ Route::get('/', function () {
     ]);
 });
 
-Route::get('/my-dashboard', function () {
-    return view('seller.index');
-});
+// Route::get('/top-up', function () {
+//     return view('top-up.index', [
+//         "title" => "Top Up",
+//         "search" => "Cari produk digital"
+//     ]);
+// });
 
-Route::get('/top-up', function () {
-    return view('top-up.index', [
-        "title" => "Top Up",
-        "search" => "Cari produk digital"
-    ]);
-});
+// Route::get('/food', function () {
+//     return view('foods');
+// });
 
-Route::get('/food', function () {
-    return view('foods');
-});
+// Route::get('/category', [CategoryController::class, 'index']);
+// Route::get('/category/{category:slug}', [CategoryController::class, 'show']);
 
-Route::get('/category', [CategoryController::class, 'index']);
-Route::get('/category/{category:slug}', [CategoryController::class, 'show']);
+// Route::get('/seller', [SellerController::class, 'index']);
+// Route::get('/seller/{seller:slug}', [SellerController::class, 'show']);
 
-Route::get('/seller', [SellerController::class, 'index']);
-Route::get('/seller/{seller:slug}', [SellerController::class, 'show']);
-
-Route::get('/products', [ProductsController::class, 'index']);
-Route::get('/{products:slug}', [ProductsController::class, 'show']);
+// Route::get('/products', [ProductsController::class, 'index']);
+// Route::get('/{products:slug}', [ProductsController::class, 'show']);
 
 
-Route::get('/top-up/paket-data', function () {
-    return view('top-up.paketData', [
-        "title" => "Beli Paket Data",
-        "search" => "Cari produk digital",
-        "topup" => TopUp::all()->where('top_up_category_id', 1)
-    ]);
-}); 
+// Route::get('/top-up/paket-data', function () {
+//     return view('top-up.paketData', [
+//         "title" => "Beli Paket Data",
+//         "search" => "Cari produk digital",
+//         "topup" => TopUp::all()->where('top_up_category_id', 1)
+//     ]);
+// }); 
 
-Route::get('/top-up/pulsa', function () {
-    return view('top-up.pulsa', [
-        "title" => "Beli Pulsa",
-        "search" => "Cari produk digital",
-        "topup" => TopUp::all()->where('top_up_category_id', 2)
-    ]);
-}); 
+// Route::get('/top-up/pulsa', function () {
+//     return view('top-up.pulsa', [
+//         "title" => "Beli Pulsa",
+//         "search" => "Cari produk digital",
+//         "topup" => TopUp::all()->where('top_up_category_id', 2)
+//     ]);
+// }); 
 
-Route::get('/top-up/telepon', function () {
-    return view('top-up.telepon', [
-        "title" => "Beli Paket Telepon",
-        "search" => "Cari produk digital",
-        "topup" => TopUp::all()->where('top_up_category_id', 3)
-    ]);
-}); 
+// Route::get('/top-up/telepon', function () {
+//     return view('top-up.telepon', [
+//         "title" => "Beli Paket Telepon",
+//         "search" => "Cari produk digital",
+//         "topup" => TopUp::all()->where('top_up_category_id', 3)
+//     ]);
+// }); 
 
-Route::get('/top-up/roaming', function () {
-    return view('top-up.roaming', [
-        "title" => "Beli Paket Roaming",
-        "search" => "Cari produk digital",
-        "topup" => TopUp::all()->where('top_up_category_id', 4)
-    ]);
-}); 
+// Route::get('/top-up/roaming', function () {
+//     return view('top-up.roaming', [
+//         "title" => "Beli Paket Roaming",
+//         "search" => "Cari produk digital",
+//         "topup" => TopUp::all()->where('top_up_category_id', 4)
+//     ]);
+// }); 
 
-Route::get('/top-up/mobile-legends', function () {
-    return view('top-up.mobilelegends', [
-        "title" => "Top-Up Mobile Legends",
-        "search" => "Cari produk digital",
-        "topup" => TopUp::all()->where('top_up_category_id', 5)
-    ]);
-}); 
+// Route::get('/top-up/mobile-legends', function () {
+//     return view('top-up.mobilelegends', [
+//         "title" => "Top-Up Mobile Legends",
+//         "search" => "Cari produk digital",
+//         "topup" => TopUp::all()->where('top_up_category_id', 5)
+//     ]);
+// }); 
 
-Route::get('/top-up/free-fire', function () {
-    return view('top-up.freefire', [
-        "title" => "Top-Up Free Fire",
-        "search" => "Cari produk digital",
-        "topup" => TopUp::all()->where('top_up_category_id', 6)
-    ]);
-}); 
+// Route::get('/top-up/free-fire', function () {
+//     return view('top-up.freefire', [
+//         "title" => "Top-Up Free Fire",
+//         "search" => "Cari produk digital",
+//         "topup" => TopUp::all()->where('top_up_category_id', 6)
+//     ]);
+// }); 
 
-Route::get('/top-up/pubg', function () {
-    return view('top-up.pubg', [
-        "title" => "Top-Up PUBG",
-        "search" => "Cari produk digital",
-        "topup" => TopUp::all()->where('top_up_category_id', 7)
-    ]);
-}); 
+// Route::get('/top-up/pubg', function () {
+//     return view('top-up.pubg', [
+//         "title" => "Top-Up PUBG",
+//         "search" => "Cari produk digital",
+//         "topup" => TopUp::all()->where('top_up_category_id', 7)
+//     ]);
+// }); 
 
-Route::get('/top-up/point-blank', function () {
-    return view('top-up.pointblank', [
-        "title" => "Top-Up Point Blank",
-        "search" => "Cari produk digital",
-        "topup" => TopUp::all()->where('top_up_category_id', 8)
-    ]);
-}); 
+// Route::get('/top-up/point-blank', function () {
+//     return view('top-up.pointblank', [
+//         "title" => "Top-Up Point Blank",
+//         "search" => "Cari produk digital",
+//         "topup" => TopUp::all()->where('top_up_category_id', 8)
+//     ]);
+// }); 
 
-Route::get('/top-up/minecraft', function () {
-    return view('top-up.minecraft', [
-        "title" => "Top-Up Minecraft",
-        "search" => "Cari produk digital",
-        "topup" => TopUp::all()->where('top_up_category_id', 9)
-    ]);
-}); 
+// Route::get('/top-up/minecraft', function () {
+//     return view('top-up.minecraft', [
+//         "title" => "Top-Up Minecraft",
+//         "search" => "Cari produk digital",
+//         "topup" => TopUp::all()->where('top_up_category_id', 9)
+//     ]);
+// }); 
 
-Route::get('/top-up/efootball', function () {
-    return view('top-up.efootball', [
-        "title" => "Top-Up eFootball 2024",
-        "search" => "Cari produk digital",
-        "topup" => TopUp::all()->where('top_up_category_id', 10)
-    ]);
-}); 
+// Route::get('/top-up/efootball', function () {
+//     return view('top-up.efootball', [
+//         "title" => "Top-Up eFootball 2024",
+//         "search" => "Cari produk digital",
+//         "topup" => TopUp::all()->where('top_up_category_id', 10)
+//     ]);
+// }); 
 
-Route::get('/top-up/steam', function () {
-    return view('top-up.steam', [
-        "title" => "Beli Steam Wallet",
-        "search" => "Cari produk digital",
-        "topup" => TopUp::all()->where('top_up_category_id', 11)
-    ]);
-}); 
+// Route::get('/top-up/steam', function () {
+//     return view('top-up.steam', [
+//         "title" => "Beli Steam Wallet",
+//         "search" => "Cari produk digital",
+//         "topup" => TopUp::all()->where('top_up_category_id', 11)
+//     ]);
+// }); 
 
-Route::get('/top-up/playstation', function () {
-    return view('top-up.playstation', [
-        "title" => "Beli PlayStation Gift",
-        "search" => "Cari produk digital",
-        "topup" => TopUp::all()->where('top_up_category_id', 12)
-    ]);
-}); 
+// Route::get('/top-up/playstation', function () {
+//     return view('top-up.playstation', [
+//         "title" => "Beli PlayStation Gift",
+//         "search" => "Cari produk digital",
+//         "topup" => TopUp::all()->where('top_up_category_id', 12)
+//     ]);
+// }); 
 
-Route::get('/top-up/dana', function () {
-    return view('top-up.dana', [
-        "title" => "Top Up Dana",
-        "search" => "Cari produk digital",
-        "topup" => TopUp::all()->where('top_up_category_id', 13)
-    ]);
-}); 
+// Route::get('/top-up/dana', function () {
+//     return view('top-up.dana', [
+//         "title" => "Top Up Dana",
+//         "search" => "Cari produk digital",
+//         "topup" => TopUp::all()->where('top_up_category_id', 13)
+//     ]);
+// }); 
 
-Route::get('/top-up/gopay', function () {
-    return view('top-up.gopay', [
-        "title" => "Top Up GoPay",
-        "search" => "Cari produk digital",
-        "topup" => TopUp::all()->where('top_up_category_id', 14)
-    ]);
-}); 
+// Route::get('/top-up/gopay', function () {
+//     return view('top-up.gopay', [
+//         "title" => "Top Up GoPay",
+//         "search" => "Cari produk digital",
+//         "topup" => TopUp::all()->where('top_up_category_id', 14)
+//     ]);
+// }); 
 
-Route::get('/top-up/ovo', function () {
-    return view('top-up.ovo', [
-        "title" => "Top Up OVO",
-        "search" => "Cari produk digital",
-        "topup" => TopUp::all()->where('top_up_category_id', 15)
-    ]);
-}); 
+// Route::get('/top-up/ovo', function () {
+//     return view('top-up.ovo', [
+//         "title" => "Top Up OVO",
+//         "search" => "Cari produk digital",
+//         "topup" => TopUp::all()->where('top_up_category_id', 15)
+//     ]);
+// }); 
 
-Route::get('/top-up/shopee', function () {
-    return view('top-up.shopee', [
-        "title" => "Top Up ShopeePay",
-        "search" => "Cari produk digital",
-        "topup" => TopUp::all()->where('top_up_category_id', 16)
-    ]);
-}); 
+// Route::get('/top-up/shopee', function () {
+//     return view('top-up.shopee', [
+//         "title" => "Top Up ShopeePay",
+//         "search" => "Cari produk digital",
+//         "topup" => TopUp::all()->where('top_up_category_id', 16)
+//     ]);
+// }); 
 
-Route::get('/top-up/netflix', function () {
-    return view('top-up.netflix', [
-        "title" => "Subscription Netflix",
-        "search" => "Cari produk digital",
-        "topup" => TopUp::all()->where('top_up_category_id', 17)
-    ]);
-}); 
+// Route::get('/top-up/netflix', function () {
+//     return view('top-up.netflix', [
+//         "title" => "Subscription Netflix",
+//         "search" => "Cari produk digital",
+//         "topup" => TopUp::all()->where('top_up_category_id', 17)
+//     ]);
+// }); 
 
-Route::get('/top-up/disney', function () {
-    return view('top-up.disney', [
-        "title" => "Subscription Disney+ Hotstar",
-        "search" => "Cari produk digital",
-        "topup" => TopUp::all()->where('top_up_category_id', 18)
-    ]);
-}); 
+// Route::get('/top-up/disney', function () {
+//     return view('top-up.disney', [
+//         "title" => "Subscription Disney+ Hotstar",
+//         "search" => "Cari produk digital",
+//         "topup" => TopUp::all()->where('top_up_category_id', 18)
+//     ]);
+// }); 
 
-Route::get('/top-up/spotify', function () {
-    return view('top-up.spotify', [
-        "title" => "Subscription Spotify",
-        "search" => "Cari produk digital",
-        "topup" => TopUp::all()->where('top_up_category_id', 19)
-    ]);
-}); 
+// Route::get('/top-up/spotify', function () {
+//     return view('top-up.spotify', [
+//         "title" => "Subscription Spotify",
+//         "search" => "Cari produk digital",
+//         "topup" => TopUp::all()->where('top_up_category_id', 19)
+//     ]);
+// }); 
 
-Route::get('/login', function () {
-    return view('login', [
-        "title" => "Login Page",
-        "search" => "Cari di IndoTreasure",
-    ]);
-}); 
+// Route::get('/login', function () {
+//     return view('login', [
+//         "title" => "Login Page",
+//         "search" => "Cari di IndoTreasure",
+//     ]);
+// }); 
 
-Route::get('/register', function () {
-    return view('register', [
-        "title" => "Register Page",
-        "search" => "Cari di IndoTreasure",
-    ]);
-}); 
+// Route::get('/register', function () {
+//     return view('register', [
+//         "title" => "Register Page",
+//         "search" => "Cari di IndoTreasure",
+//     ]);
+// }); 
 
+// Seller Section
+Route::get('/my-dashboard', [SellerDashboard::class, 'show_toko']);
+Route::get('/my-dashboard/produk', [SellerDashboard::class, 'show_produk']);
+Route::get('/my-dashboard/pesanan', [SellerDashboard::class, 'show_pesanan']);
+
+// Admin Section
 Route::get('/ZFED5u3QN9x7ykwzqA4s8W', function () {
-    return view('super-admin.index');
+    return view('admin-dashboard.ruukaze-super.index');
 }); 
