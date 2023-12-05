@@ -13,7 +13,11 @@ class ProductsController extends Controller
      */
     public function index()
     {
-        // 
+        return view('products', [
+            "title" => "Cari Toko",
+            "search" => "Cari Produk",
+            "products" => Products::inRandomOrder()->get(),
+        ]);
     }
 
     /**

@@ -33,10 +33,10 @@ class DatabaseSeeder extends Seeder
 
         User::create([
             'name' => 'Andi Muh. Haikal Lukman',
-            'birthdate' => '',
+            'birthdate' => '2004-04-15',
             'username' => 'dccal',
-            'email' => '',
-            'primary_phone_number' => '',
+            'email' => 'pengagumrahasiaanda@gmail.com',
+            'primary_phone_number' => '081352412134',
             'gender' => 'Male',
             'role' => 'admin',
             'password' => bcrypt('SorryYaAkuMabok')
@@ -44,10 +44,10 @@ class DatabaseSeeder extends Seeder
 
         User::create([
             'name' => 'Henokh Abhinaya Tjahjadi',
-            'birthdate' => '',
+            'birthdate' => '2004-04-15',
             'username' => 'enoch',
-            'email' => '',
-            'primary_phone_number' => '',
+            'email' => 'enochkunnnn@gmail.com',
+            'primary_phone_number' => '081312412134',
             'gender' => 'Male',
             'role' => 'admin',
             'password' => bcrypt('SorryYaAkuMabok')
@@ -55,10 +55,10 @@ class DatabaseSeeder extends Seeder
 
         User::create([
             'name' => 'Mayko Raditya Wirawan',
-            'birthdate' => '',
+            'birthdate' => '2004-04-15',
             'username' => 'h3nry',
-            'email' => '',
-            'primary_phone_number' => '',
+            'email' => 'himpunanmodelahh@gmail.com',
+            'primary_phone_number' => '081333212134',
             'gender' => 'Male',
             'role' => 'admin',
             'password' => bcrypt('SorryYaAkuMabok')
@@ -66,10 +66,10 @@ class DatabaseSeeder extends Seeder
 
         User::create([
             'name' => 'Muhammad Nabil Shadiq',
-            'birthdate' => '',
+            'birthdate' => '2004-04-15',
             'username' => 'naaoi',
-            'email' => '',
-            'primary_phone_number' => '',
+            'email' => 'naooiiselamanya@gmail.com',
+            'primary_phone_number' => '081352455134',
             'gender' => 'Male',
             'role' => 'admin',
             'password' => bcrypt('SorryYaAkuMabok')
@@ -77,10 +77,10 @@ class DatabaseSeeder extends Seeder
 
         User::create([
             'name' => 'Muhammad Ilham Syahfithrah Hendra',
-            'birthdate' => '',
+            'birthdate' => '2004-04-15',
             'username' => 'nito',
-            'email' => '',
-            'primary_phone_number' => '',
+            'email' => 'nitonihbozzz@gmail.com',
+            'primary_phone_number' => '081352412322',
             'gender' => 'Male',
             'role' => 'admin',
             'password' => bcrypt('SorryYaAkuMabok')
@@ -88,10 +88,10 @@ class DatabaseSeeder extends Seeder
 
         User::create([
             'name' => 'Andi Ahmad Salwan Farid',
-            'birthdate' => '',
+            'birthdate' => '2004-04-15',
             'username' => 'sal1',
-            'email' => '',
-            'primary_phone_number' => '',
+            'email' => 'thisiscogil@gmail.com',
+            'primary_phone_number' => '081352412145',
             'gender' => 'Male',
             'role' => 'admin',
             'password' => bcrypt('SorryYaAkuMabok')

@@ -13,7 +13,11 @@ class SellerController extends Controller
      */
     public function index()
     {
-        //
+        return view('sellers', [
+            "title" => "Toko",
+            "search" => "Cari berdasarkan penjual",
+            "sellers" => Seller::inRandomOrder()->get(),
+        ]);    
     }
 
     /**

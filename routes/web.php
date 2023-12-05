@@ -1,10 +1,12 @@
 <?php
 
+use App\Http\Controllers\SellerController;
 use App\Models\TopUp;
 use App\Models\Seller;
 use App\Models\Category;
 use App\Models\Products;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\ProductsController;
 
 /*
@@ -22,33 +24,15 @@ Route::get('/', function () {
     return view('index', [
         "title" => "Top 1 E-Commerce In Indonesia",
         "search" => "Cari di IndoTreasure",
-        "categories" => Category::all(),
-        "sellers" => Seller::all(),
-        "products" => Products::all()
+        "categories" => Category::orderBy('created_at', 'desc')->get(),
+        "sellers" => Seller::inRandomOrder()->get(),
+        "products" => Products::inRandomOrder()->get()
     ]);
 });
 
-Route::get('/food', function () {
-    return view('foods');
+Route::get('/my-dashboard', function () {
+    return view('seller.index');
 });
-
-Route::get('/category', function () {
-    return view('categories', [
-        "title" => "Kategori",
-        "search" => "Cari berdasarkan kategori",
-        "categories" => Category::all(),
-    ]);
-});
-
-Route::get('/seller', function () {
-    return view('sellers', [
-        "title" => "Toko",
-        "search" => "Cari berdasarkan penjual",
-        "sellers" => Seller::all(),
-    ]);
-});
-
-Route::get('/{products:slug}', [ProductsController::class, 'show']);
 
 Route::get('/top-up', function () {
     return view('top-up.index', [
@@ -56,6 +40,20 @@ Route::get('/top-up', function () {
         "search" => "Cari produk digital"
     ]);
 });
+
+Route::get('/food', function () {
+    return view('foods');
+});
+
+Route::get('/category', [CategoryController::class, 'index']);
+Route::get('/category/{category:slug}', [CategoryController::class, 'show']);
+
+Route::get('/seller', [SellerController::class, 'index']);
+Route::get('/seller/{seller:slug}', [SellerController::class, 'show']);
+
+Route::get('/products', [ProductsController::class, 'index']);
+Route::get('/{products:slug}', [ProductsController::class, 'show']);
+
 
 Route::get('/top-up/paket-data', function () {
     return view('top-up.paketData', [

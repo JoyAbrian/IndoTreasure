@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Category;
 use App\Http\Requests\StoreCategoryRequest;
 use App\Http\Requests\UpdateCategoryRequest;
+use App\Models\Products;
 
 class CategoryController extends Controller
 {
@@ -13,7 +14,11 @@ class CategoryController extends Controller
      */
     public function index()
     {
-        //
+        return view('categories', [
+            "title" => "Kategori",
+            "search" => "Cari berdasarkan kategori",
+            "categories" => Category::all(),
+        ]);    
     }
 
     /**
@@ -37,7 +42,11 @@ class CategoryController extends Controller
      */
     public function show(Category $category)
     {
-        //
+        return view('category', [
+            "title" => "Kategori",
+            "search" => "Cari berdasarkan kategori",
+            "Category" => $category->product,
+        ]);    
     }
 
     /**
