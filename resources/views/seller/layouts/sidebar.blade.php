@@ -14,12 +14,12 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link d-flex align-items-center gap-2 {{ Request::is('my-dashboard/product*') ? 'active' : '' }}" href="/my-dashboard/produk">
+                    <a class="nav-link d-flex align-items-center gap-2 {{ Request::is('my-dashboard/produk*') ? 'active' : '' }}" href="/my-dashboard/produk">
                         <i class="bi bi-box-seam"></i> Produk
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link d-flex align-items-center gap-2 {{ Request::is('my-dashboard/orders*') ? 'active' : '' }}" href="/my-dashboard/pesanan">
+                    <a class="nav-link d-flex align-items-center gap-2 {{ Request::is('my-dashboard/pesanan*') ? 'active' : '' }}" href="/my-dashboard/pesanan">
                         <i class="bi bi-cart"></i> Pesanan
                     </a>
                 </li>

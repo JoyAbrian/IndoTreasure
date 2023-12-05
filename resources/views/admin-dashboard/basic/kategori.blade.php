@@ -1,4 +1,4 @@
-@extends('seller.layouts.main')
+@extends('admin-dashboard.basic.layouts.main')
 
 @section('container')
 

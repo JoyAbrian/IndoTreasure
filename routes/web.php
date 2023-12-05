@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AdminDashboard;
 use App\Http\Controllers\SellerController;
 use App\Models\TopUp;
 use App\Models\Seller;
@@ -225,6 +226,10 @@ Route::get('/my-dashboard/produk', [SellerDashboard::class, 'show_produk']);
 Route::get('/my-dashboard/pesanan', [SellerDashboard::class, 'show_pesanan']);
 
 // Admin Section
-Route::get('/ZFED5u3QN9x7ykwzqA4s8W', function () {
-    return view('admin-dashboard.ruukaze-super.index');
-}); 
+Route::get('/admin-dashboard', [AdminDashboard::class, 'admin_dashboard']);
+Route::get('/admin-dashboard/user', [AdminDashboard::class, 'admin_user']);
+Route::get('/admin-dashboard/toko', [AdminDashboard::class, 'admin_toko']);
+Route::get('/admin-dashboard/produk', [AdminDashboard::class, 'admin_produk']);
+Route::get('/admin-dashboard/kategori', [AdminDashboard::class, 'admin_kategori']);
+Route::get('/admin-dashboard/pesanan', [AdminDashboard::class, 'admin_pesanan']);
+// Route::get('/ZFED5u3QN9x7ykwzqA4s8W', [AdminDashboard::class, 'superAdmin_dashboard']);
