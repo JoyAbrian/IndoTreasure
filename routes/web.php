@@ -4,10 +4,12 @@ use App\Http\Controllers\Home;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AdminDashboard;
 use App\Http\Controllers\FoodController;
+use App\Http\Controllers\LoginController;
 use App\Http\Controllers\SellerDashboard;
 use App\Http\Controllers\SellerController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\ProductsController;
+use App\Http\Controllers\RegisterController;
 
 /*
 |--------------------------------------------------------------------------
@@ -199,19 +201,17 @@ Route::get('/payments', function() {
 //     ]);
 // }); 
 
-// Route::get('/login', function () {
-//     return view('login', [
-//         "title" => "Login Page",
-//         "search" => "Cari di IndoTreasure",
-//     ]);
-// }); 
+Route::get('/login', function () {
+    return view('login', [
+        "title" => "Login Page",
+        "search" => "Cari di IndoTreasure",
+    ]);
+}); 
+Route::get('/login', [LoginController::class, 'index']);
+Route::Post('/login', [LoginController::class, 'authenticate']);
 
-// Route::get('/register', function () {
-//     return view('register', [
-//         "title" => "Register Page",
-//         "search" => "Cari di IndoTreasure",
-//     ]);
-// }); 
+Route::get('/register', [RegisterController::class, 'index']);
+Route::post('/register', [RegisterController::class, 'store']);
 
 // Seller Section
 Route::get('/my-dashboard', [SellerDashboard::class, 'show_toko']);
