@@ -31,7 +31,9 @@ Route::get('/seller/{seller:slug}', [SellerController::class, 'show']);
 
 Route::get('/food', [FoodController::class, 'index']);
 
-
+Route::get('/payments', function() {
+    return view('payments.index');
+});
 // Route::get('/top-up', function () {
 //     return view('top-up.index', [
 //         "title" => "Top Up",
