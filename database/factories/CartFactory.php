@@ -20,7 +20,7 @@ class CartFactory extends Factory
             'user_id' => fake()->numberBetween(8, 30),
             'product_id' => fake()->numberBetween(1, 90),
             'stok' => fake()->numberBetween(1, 5),
-            // 'amount' => 
+            'total_harga' => fake()->numberBetween(1, 5)
         ];
     }
 }

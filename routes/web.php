@@ -1,15 +1,13 @@
 <?php
 
-use App\Http\Controllers\AdminDashboard;
-use App\Http\Controllers\SellerController;
-use App\Models\TopUp;
-use App\Models\Seller;
-use App\Models\Category;
-use App\Models\Products;
+use App\Http\Controllers\Home;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\AdminDashboard;
+use App\Http\Controllers\FoodController;
+use App\Http\Controllers\SellerDashboard;
+use App\Http\Controllers\SellerController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\ProductsController;
-use App\Http\Controllers\SellerDashboard;
 
 /*
 |--------------------------------------------------------------------------
@@ -23,15 +21,16 @@ use App\Http\Controllers\SellerDashboard;
 */
 
 // Guest / Buyer Section
-Route::get('/', function () {
-    return view('index', [
-        "title" => "Top 1 E-Commerce In Indonesia",
-        "search" => "Cari di IndoTreasure",
-        "categories" => Category::orderBy('created_at', 'desc')->get(),
-        "sellers" => Seller::inRandomOrder()->get(),
-        "products" => Products::inRandomOrder()->get()
-    ]);
-});
+Route::get('/', [Home::class, 'show_home']);
+
+Route::get('/category', [CategoryController::class, 'index']);
+Route::get('/category/{category:slug}', [CategoryController::class, 'show']);
+
+Route::get('/seller', [SellerController::class, 'index']);
+Route::get('/seller/{seller:slug}', [SellerController::class, 'show']);
+
+Route::get('/food', [FoodController::class, 'index']);
+
 
 // Route::get('/top-up', function () {
 //     return view('top-up.index', [
@@ -40,15 +39,7 @@ Route::get('/', function () {
 //     ]);
 // });
 
-// Route::get('/food', function () {
-//     return view('foods');
-// });
 
-// Route::get('/category', [CategoryController::class, 'index']);
-// Route::get('/category/{category:slug}', [CategoryController::class, 'show']);
-
-// Route::get('/seller', [SellerController::class, 'index']);
-// Route::get('/seller/{seller:slug}', [SellerController::class, 'show']);
 
 // Route::get('/products', [ProductsController::class, 'index']);
 // Route::get('/{products:slug}', [ProductsController::class, 'show']);

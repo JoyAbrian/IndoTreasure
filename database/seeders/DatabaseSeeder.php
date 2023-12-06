@@ -19,6 +19,17 @@ class DatabaseSeeder extends Seeder
         //     'name' => 'Test User',
         //     'email' => 'test@example.com',
         // ]);
+        $this->call([
+            AlamatSeeder::class,
+            CartSeeder::class,
+            CategorySeeder::class,
+            PaymentsSeeder::class,
+            ProductsSeeder::class,
+            SellerSeeder::class,
+            TopUpCategorySeeder::class,
+            TopUpSeeder::class,
+            WishlistSeeder::class
+        ]);
 
         User::create([
             'name' => 'Joy Abrian Rantepasang',
