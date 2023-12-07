@@ -132,6 +132,7 @@
                     </div>
                 </div>
                 @endforeach
+                {{ $sellers->links() }}
             </div>
         </div>
     </div>

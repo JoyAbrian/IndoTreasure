@@ -31,6 +31,10 @@ Route::get('/category/{category:slug}', [CategoryController::class, 'show']);
 Route::get('/seller', [SellerController::class, 'index']);
 Route::get('/seller/{seller:slug}', [SellerController::class, 'show']);
 
+Route::get('/products', [ProductsController::class, 'index']);
+Route::get('/products/{product:slug}', [ProductsController::class, 'show']);
+
+
 Route::get('/food', [FoodController::class, 'index']);
 
 Route::get('/payments', function() {
@@ -201,12 +205,6 @@ Route::get('/payments', function() {
 //     ]);
 // }); 
 
-Route::get('/login', function () {
-    return view('login', [
-        "title" => "Login Page",
-        "search" => "Cari di IndoTreasure",
-    ]);
-}); 
 Route::get('/login', [LoginController::class, 'index']);
 Route::Post('/login', [LoginController::class, 'authenticate']);
 

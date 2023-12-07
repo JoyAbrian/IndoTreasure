@@ -117,7 +117,7 @@
         </style>
 
         <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-            <a href="/categories" style="text-decoration: none; color:#000"><h1 class="h2">Categories</h1></a>
+            <a href="/category" style="text-decoration: none; color:#000"><h1 class="h2">Categories</h1></a>
         </div>
         <div class="row">
             @foreach($categories as $category)
@@ -284,8 +284,10 @@
             @foreach($products as $product)
                 <div class="col-md-12 col-lg-4 mb-5 mb-lg-0">
                     <div class="card h-100">
-                        <img src="/{{ $product->image }}" class="card-img-top img-fluid" style="height: 400px"
-                            alt="Laptop" />
+                        <a href="/products/{{ $product->slug }}">
+                            <img src="/{{ $product->image }}" class="card-img-top img-fluid" style="height: 400px"
+                                alt="Laptop" />
+                        </a>
                         <div class="card-body d-flex flex-column">
                             <div class="d-flex justify-content-between">
                                 <p class="small text-muted"><a href="/category/{{ $product->category->slug }}"

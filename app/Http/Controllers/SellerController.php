@@ -16,7 +16,7 @@ class SellerController extends Controller
         return view('sellers', [
             "title" => "Toko",
             "search" => "Cari berdasarkan penjual",
-            "sellers" => Seller::inRandomOrder()->get(),
+            "sellers" => Seller::paginate(9),
         ]);
     }
 

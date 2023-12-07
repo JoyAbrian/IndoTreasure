@@ -16,7 +16,7 @@ class ProductsController extends Controller
         return view('products', [
             "title" => "Cari Toko",
             "search" => "Cari Produk",
-            "products" => Products::inRandomOrder()->get(),
+            "products" => Products::inRandomOrder()->paginate(12),
         ]);
     }
 

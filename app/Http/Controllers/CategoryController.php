@@ -17,7 +17,7 @@ class CategoryController extends Controller
         return view('categories', [
             "title" => "Kategori",
             "search" => "Cari berdasarkan kategori",
-            "categories" => Category::all(),
+            "categories" => Category::paginate(9),
         ]);    
     }
 
