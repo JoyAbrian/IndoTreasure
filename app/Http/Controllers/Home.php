@@ -13,9 +13,9 @@ class Home extends Controller
         return view('index', [
             "title" => "Top 1 E-Commerce In Indonesia",
             "search" => "Cari di IndoTreasure",
-            "categories" => Category::orderBy('created_at', 'desc')->get(),
-            "sellers" => Seller::inRandomOrder()->get(),
-            "products" => Products::inRandomOrder()->get()
+            "categories" => Category::orderBy('id', 'desc')->take(6)->get(),
+            "sellers" => Seller::inRandomOrder()->take(6)->get(),
+            "products" => Products::inRandomOrder()->take(10)->get()
         ]);
     }
 }

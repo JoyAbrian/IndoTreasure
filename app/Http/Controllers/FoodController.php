@@ -13,7 +13,10 @@ class FoodController extends Controller
      */
     public function index()
     {
-        return view('foods');
+        return view('handling', [
+            'title' => "YOU'RE NOT SUPPOSED TO BE HERE",
+            'search' => "TREPASSING"
+        ]);
     }
 
     /**

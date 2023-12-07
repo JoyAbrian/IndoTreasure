@@ -16,4 +16,8 @@ class Seller extends Model
     public function category() {
         return $this->belongsTo(Category::class, 'seller_category');
     }
+
+    public function product() {
+        return $this->hasMany(Products::class, 'seller_id');
+    }
 }
