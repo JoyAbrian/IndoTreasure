@@ -20,4 +20,8 @@ class Products extends Model
     public function seller() {
         return $this->belongsTo(Seller::class, 'seller_id');
     }
+
+    public function payment() {
+        return $this->hasMany(Payments::class, 'product_id');
+    }
 }

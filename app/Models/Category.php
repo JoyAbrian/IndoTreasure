@@ -12,4 +12,12 @@ class Category extends Model
     protected $guarded = [
         'id'
     ];
+
+    public function seller() {
+        return $this->hasMany(Seller::class, 'seller_category');
+    }
+
+    public function product() {
+        return $this->hasMany(Products::class, 'category_id');
+    }
 }
