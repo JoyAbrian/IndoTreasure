@@ -235,7 +235,7 @@
                                 <h2>{{ $seller->name }}</h2>
                                 <h6>{{ $seller->product->count() }} PRODUCTS - {{ $seller->category->name }}</h6>
                             </div>
-                            <div class="btn btn-pink ml-auto">VIEW STORE</div>
+                            <a href="/seller/{{ $seller->slug }}" class="btn btn-pink ml-auto">VIEW STORE</a>
                         </div>
                         <div class="line"></div>
                         <div class="row d-flex justify-content-between px-3">

@@ -12,7 +12,7 @@
     </div>
 @endif
 
-<a href="" class="btn btn-primary mb-3"><i class="bi bi-plus"></i> Add New Admin</a>
+<a href="/ZFED5u3QN9x7ykwzqA4s8W/admin/create" class="btn btn-primary mb-3"><i class="bi bi-plus"></i> Add New Admin</a>
 <div class="row row-cols-1 row-cols-md-3 g-4">
     @foreach ($users as $user)
     <div class="col">
@@ -26,7 +26,7 @@
                         <a href="" class="badge bg-info"><i class="bi bi-eye"></i> View</a>
                         <form action="" method="post" class="d-inline ml-2">
                             <button class="badge bg-danger border-0" onclick="return confirm('Are you sure?')">
-                                <i class="bi bi-ban"></i> Ban</button>
+                                <i class="bi bi-fire"></i> Fire</button>
                         </form>
                     </div>
                 </div>

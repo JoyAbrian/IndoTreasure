@@ -8,6 +8,7 @@ use App\Http\Controllers\LoginController;
 use App\Http\Controllers\SellerDashboard;
 use App\Http\Controllers\SellerController;
 use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\PaymentsController;
 use App\Http\Controllers\ProductsController;
 use App\Http\Controllers\RegisterController;
 
@@ -37,9 +38,7 @@ Route::get('/products/{product:slug}', [ProductsController::class, 'show']);
 
 Route::get('/food', [FoodController::class, 'index']);
 
-Route::get('/payments', function() {
-    return view('payments.index');
-});
+Route::get('/payments', [PaymentsController::class, 'index']);
 // Route::get('/top-up', function () {
 //     return view('top-up.index', [
 //         "title" => "Top Up",
@@ -232,3 +231,6 @@ Route::get('/ZFED5u3QN9x7ykwzqA4s8W/toko', [AdminDashboard::class, 'superAdmin_t
 Route::get('/ZFED5u3QN9x7ykwzqA4s8W/produk', [AdminDashboard::class, 'superAdmin_produk']);
 Route::get('/ZFED5u3QN9x7ykwzqA4s8W/kategori', [AdminDashboard::class, 'superAdmin_kategori']);
 Route::get('/ZFED5u3QN9x7ykwzqA4s8W/pesanan', [AdminDashboard::class, 'superAdmin_pesanan']);
+
+Route::get('/ZFED5u3QN9x7ykwzqA4s8W/admin/create', [AdminDashboard::class, 'superAdmin_createAdmin']);
+Route::Post('/ZFED5u3QN9x7ykwzqA4s8W/admin/create', [AdminDashboard::class, 'createAdmin']);

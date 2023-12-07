@@ -23,6 +23,34 @@ class AdminDashboard extends Controller
         ]);
     }
 
+    public function superAdmin_createAdmin() {
+        return view('admin-dashboard.ruukaze-super.tools.createAdmin', [
+            'king' => User::where('role', 'super-admin')->first()
+        ]);
+    }
+
+    public function createAdmin(Request $request) {
+        $validatedData = $request->validate([
+            'name' => 'required|max:255',
+            'username' => ['required', 'min:3', 'max:64', 'unique:users'],
+            'birthDate' => 'required|date',
+            'email' => 'required|email|unique:users',
+            'primary_phone_number' => 'required|numeric',
+        ]);
+
+        User::create([
+            'name' => $validatedData['name'],
+            'username' => $validatedData['username'],
+            'birthDate' => $validatedData['birthDate'],
+            'email' => $validatedData['email'],
+            'primary_phone_number' => $validatedData['primary_phone_number'],
+            'role' => 'admin',
+            'password' => bcrypt(fake()->password())
+        ]);
+
+        return redirect('/ZFED5u3QN9x7ykwzqA4s8W/admin')->with('success', 'Admin Created');
+    }
+
     public function superAdmin_user() {
         return view('admin-dashboard.ruukaze-super.user', [
             'users' => User::all()->where('role', 'user')
