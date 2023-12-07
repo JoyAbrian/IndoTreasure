@@ -15,7 +15,7 @@ class Home extends Controller
             "search" => "Cari di IndoTreasure",
             "categories" => Category::orderBy('id', 'desc')->take(6)->get(),
             "sellers" => Seller::inRandomOrder()->take(6)->get(),
-            "products" => Products::inRandomOrder()->take(11)->get()
+            "products" => Products::inRandomOrder()->take(12)->get()
         ]);
     }
 }
