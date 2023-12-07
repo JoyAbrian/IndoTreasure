@@ -12,7 +12,15 @@ class AdminDashboard extends Controller
 {
     // Super Admin
     public function superAdmin_dashboard() {
-        return view('admin-dashboard.ruukaze-super.index');
+        return view('admin-dashboard.ruukaze-super.index', [
+            'king' => User::where('role', 'super-admin')->first()
+        ]);
+    }
+
+    public function superAdmin_editProfile() {
+        return view('admin-dashboard.ruukaze-super.tools.editProfile', [
+            'king' => User::where('role', 'super-admin')->first()
+        ]);
     }
 
     public function superAdmin_user() {
@@ -35,7 +43,7 @@ class AdminDashboard extends Controller
 
     public function superAdmin_produk() {
         return view('admin-dashboard.ruukaze-super.produk', [
-            'products' => Products::all()
+            'products' => Products::inRandomOrder()->get()
         ]);
     }
 

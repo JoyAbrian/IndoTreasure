@@ -16,7 +16,7 @@ return new class extends Migration
             $table->string('name', 46);
             $table->string('slug', 46)->unique();
             $table->text('bio')->default('');
-            $table->string('images')->default('ppDefault.png');
+            $table->string('images')->default('img/default-toko.png');
             $table->string('banner')->default('bannerDefault.png');
             $table->foreignId('seller_category')->default(1);
             $table->string('address');

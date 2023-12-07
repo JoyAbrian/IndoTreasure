@@ -44,35 +44,44 @@
     <h2>Categories</h2>
     <div class="row row-cols-1 row-cols-md-3 g-4">
         @foreach($categories as $category)
-        <a href="/categories/{{ $category->slug }}">
-            <div class="col">
-                <div class="card">
-                    <img src="img/for-seeder/categories/{{ $category->images }}" class="card-img-top" alt="{{ $category->name }}">
-                    <div class="card-body">
-                        <h5 class="card-title">{{ $category->name }}</h5>
+            <a href="/categories/{{ $category->slug }}">
+                <div class="col">
+                    <div class="card">
+                        <img src="img/for-seeder/categories/{{ $category->images }}" class="card-img-top"
+                            alt="CATEGORY">
+                        <div class="card-body">
+                            <h5 class="card-title">{{ $category->name }}</h5>
+                        </div>
                     </div>
                 </div>
-            </div>
-        </a>
+            </a>
         @endforeach
     </div>
 </div>
 
 <div class="container">
-    <h2>Seller</h2>
-    <div class="row row-cols-1 row-cols-md-3 g-4">
-        @foreach($sellers as $seller)
-        <a href="/seller/{{ $seller->slug }}">
-            <div class="col">
-                <div class="card">
-                    <img src="img/for-seeder/seller/{{ $seller->images }}" class="card-img-top" alt="{{ $seller->name }}">
-                    <div class="card-body">
-                        <h5 class="card-title">{{ $seller->name }}</h5>
+    <div class="container">
+        <div
+            class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+            <h1 class="h2">List Toko</h1>
+        </div>
+        <div class="row row-cols-1 row-cols-md-3 g-4">
+            @foreach($sellers as $seller)
+                <div class="col">
+                    <div class="card h-100">
+                        <img src="/{{ $seller->images }}" class="card-img-top img-fluid"
+                            style="height: 400px; object-fit: cover" alt="SHOP">
+                        <div class="card-body">
+                            <h5 class="card-title">{{ $seller->name }}</h5>
+                            <p class="card-text">{{ $seller->address }}</p>
+                            <div class="d-flex justify-content-end">
+                                <a href="" class="badge bg-info"><i class="bi bi-eye"></i> View Store</a>
+                            </div>
+                        </div>
                     </div>
                 </div>
-            </div>
-        </a>
-        @endforeach
+            @endforeach
+        </div>
     </div>
 </div>
 
@@ -80,16 +89,17 @@
     <h2>Product</h2>
     <div class="row row-cols-1 row-cols-md-3 g-4">
         @foreach($products as $product)
-        <a href="/{{ $product->slug }}">
-            <div class="col">
-                <div class="card">
-                    <img src="img/for-seeder/product/{{ $product->image }}" class="card-img-top" alt="{{ $product->name }}">
-                    <div class="card-body">
-                        <h5 class="card-title">{{ $product->productName }}</h5>
+            <a href="/{{ $product->slug }}">
+                <div class="col">
+                    <div class="card">
+                        <img src="/{{ $product->image }}" class="card-img-top"
+                            alt="PRODUCT">
+                        <div class="card-body">
+                            <h5 class="card-title">{{ $product->productName }}</h5>
+                        </div>
                     </div>
                 </div>
-            </div>
-        </a>
+            </a>
         @endforeach
     </div>
 </div>

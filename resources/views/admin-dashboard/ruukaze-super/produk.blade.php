@@ -28,10 +28,10 @@
                 <tr>
                     <td>{{ $loop->iteration }}</td>
                     <td>
-                        <div class="card mb-3" style="max-width: 540px;">
+                        <div class="card mb-3" style="max-width: 640px;">
                             <div class="row g-0">
                                 <div class="col-md-4">
-                                    <img src="/img/noImage.png" class="img-fluid rounded-start w-10" alt="{{ $produk->productName }}">
+                                    <img src="/{{ $produk->image }}" class="img-fluid rounded-start w-10" style="max-height: 200px" alt="Gambar Produk">
                                 </div>
                                 <div class="col-md-8">
                                     <div class="card-body">
