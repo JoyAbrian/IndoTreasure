@@ -41,7 +41,12 @@ class SellerController extends Controller
      */
     public function show(Seller $seller)
     {
-        //
+        return view('seller', [
+            'title' => 'Kategori ' . $seller->name,
+            'search' => 'Cari berdasarkan kategori',
+            'seller' => $seller,
+            'products' => $seller->product()->paginate(12)
+        ]);
     }
 
     /**

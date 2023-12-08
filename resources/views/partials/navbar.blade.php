@@ -1,4 +1,4 @@
-@guest
+    @guest
 <nav class="navbar sticky-top" style="background-color: rgb(170, 170, 170); padding: 4px 16px; line-height: 0.5;">
     <div class="container-fluid d-flex justify-content-between">
         <div class="d-flex align-items-start">
@@ -10,7 +10,7 @@
         </div>
     </div>
 </nav>
-@endguest
+    @endguest
 
 <nav class="navbar sticky-top" style="background-color: #004080">
     <div class="container-fluid d-flex justify-content-between align-items-center">
@@ -50,10 +50,10 @@
             </ul>
         </li>
         @else
-        <div class="buttons-container">
-            <a class="btn login-button" href="/login">Login</a>
-            <a class="btn register-button" href="/register">Register</a>
-        </div>
+            <div class="buttons-container">
+                <a class="btn login-button" href="/login">Login</a>
+                <a class="btn register-button" href="/register">Register</a>
+            </div>
         @endauth
     </div>
 </nav>

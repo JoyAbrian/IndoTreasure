@@ -27,13 +27,27 @@ class LoginController extends Controller
             return redirect()->intended('/');
         }
 
+        $sellerCredentials = [
+            'slug' => $credentials['username'],
+            'password' => $credentials['password'],
+        ];
+
+        if (Auth::guard('seller')->attempt($sellerCredentials)) {
+            $request->session()->regenerate();
+            return redirect()->intended('/my-dashboard');
+        }
+
         return back()->with('loginError', 'Login failed!');
     }
 
     public function logout(Request $request)
     {
-        Auth::logout();
-        
+        if (Auth::guard('seller')->check()) {
+            Auth::guard('seller')->logout();
+        } else {
+            Auth::logout();
+        }
+
         $request->session()->invalidate();
 
         $request->session()->regenerateToken();

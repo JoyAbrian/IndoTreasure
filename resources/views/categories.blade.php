@@ -92,7 +92,7 @@
                         </a>
                         <div class="card-body text-center">
                             <h4 class="card-title">{{ $category->name }}</h4>
-                            <a class="btn btn-outline-primary btn-sm" href="#" data-abc="true">View Details</a>
+                            <a class="btn btn-outline-primary btn-sm" href="/category/{{ $category->slug }}" data-abc="true">View Details</a>
                         </div>
                     </div>
                 </div>

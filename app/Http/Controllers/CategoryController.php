@@ -42,11 +42,11 @@ class CategoryController extends Controller
      */
     public function show(Category $category)
     {
-        return view('category', [
-            "title" => "Kategori",
-            "search" => "Cari berdasarkan kategori",
-            "Category" => $category->product,
-        ]);    
+        return view('products', [
+            'title' => 'Kategori ' . $category->name,
+            'search' => 'Cari berdasarkan kategori',
+            'products' => $category->products()->paginate(12)
+        ]);
     }
 
     /**

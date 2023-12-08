@@ -122,7 +122,7 @@
         <div class="row">
             @foreach($categories as $category)
                 <div class="col-md-4 col-sm-6">
-                    <div class="card mb-30"><a class="card-img-tiles" href="#" data-abc="true">
+                    <div class="card mb-30"><a class="card-img-tiles" data-abc="true">
                             <div class="inner">
                                 <div class="main-img"><img src="/{{ $category->images }}" style="height: 300px"
                                         alt="CATEGORY"></div>
@@ -130,7 +130,7 @@
                         </a>
                         <div class="card-body text-center">
                             <h4 class="card-title">{{ $category->name }}</h4>
-                            <a class="btn btn-outline-primary btn-sm" href="#" data-abc="true">View Details</a>
+                            <a class="btn btn-outline-primary btn-sm" href="/category/{{ $category->slug }}" data-abc="true">View Details</a>
                         </div>
                     </div>
                 </div>

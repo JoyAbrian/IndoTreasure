@@ -24,4 +24,8 @@ class Products extends Model
     public function payment() {
         return $this->hasMany(Payments::class, 'product_id');
     }
+
+    public function getRouteKeyName() {
+        return 'slug';
+    }
 }

@@ -47,6 +47,12 @@ class ProductsController extends Controller
             "title" => $products->productName,
             "search" => "Cari produk lain",
             "products" => $products,
+            "other" => Products::where('category_id', $products->category_id)
+                                ->orWhere('seller_id', $products->seller_id)
+                                ->where('id', '!=', $products->id)
+                                ->inRandomOrder()
+                                ->limit(3)
+                                ->get()
         ]);
     }
 
