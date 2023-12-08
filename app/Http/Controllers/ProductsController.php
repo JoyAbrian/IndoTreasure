@@ -2,11 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Cart;
 use App\Models\Products;
-use App\Http\Requests\StoreProductsRequest;
-use App\Http\Requests\UpdateProductsRequest;
 use App\Models\Wishlist;
 use Illuminate\Http\Request;
+use App\Http\Requests\StoreProductsRequest;
+use App\Http\Requests\UpdateProductsRequest;
 
 class ProductsController extends Controller
 {
@@ -78,6 +79,14 @@ class ProductsController extends Controller
         ]);
     }
 
+    public function show_cart()
+    {
+        return view('cart', [
+            "title" => "Cart",
+            "search" => "Cari produk lain",
+            "carts" => Cart::all()->where('user_id', auth()->user()->id)
+        ]);
+    }
     /**
      * Update the specified resource in storage.
      */

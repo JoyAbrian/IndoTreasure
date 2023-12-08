@@ -35,12 +35,12 @@ Route::get('/seller/{seller:slug}', [SellerController::class, 'show']);
 Route::get('/products', [ProductsController::class, 'index']);
 Route::get('/products/{products:slug}', [ProductsController::class, 'show']);
 
-
 Route::get('/wishlist', [ProductsController::class, 'show_wish'])->middleware('auth');
 Route::Post('/wish', [ProductsController::class, 'wish'])->middleware('auth');
 
-Route::get('/handle', [FoodController::class, 'index']);
+Route::get('/cart', [ProductsController::class, 'show_cart'])->middleware('auth');
 
+Route::get('/handle', [FoodController::class, 'index']);
 Route::get('/payments', [PaymentsController::class, 'index']);
 // Route::get('/top-up', function () {
 //     return view('top-up.index', [
@@ -217,7 +217,9 @@ Route::post('/register', [RegisterController::class, 'store']);
 // Seller Section
 Route::get('/my-dashboard', [SellerDashboard::class, 'show_toko'])->middleware('seller');
 Route::get('/my-dashboard/produk', [SellerDashboard::class, 'show_produk'])->middleware('seller');
+Route::get('/my-dashboard/produk/{product:slug}', [SellerDashboard::class, 'single_product'])->middleware('seller');
 Route::get('/my-dashboard/pesanan', [SellerDashboard::class, 'show_pesanan'])->middleware('seller');
+Route::delete('/my-dashboard/produk', [SellerDashboard::class, 'deleteProduk']);
 
 // Admin Section
 Route::get('/admin-dashboard', [AdminDashboard::class, 'admin_dashboard'])->middleware('admin');

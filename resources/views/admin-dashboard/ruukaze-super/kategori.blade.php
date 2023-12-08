@@ -33,7 +33,7 @@
                             <div class="card mb-3" style="max-width: 540px;">
                                 <div class="row g-0">
                                     <div class="col-md-4">
-                                        <img src="/img/noImage.png" class="img-fluid rounded-start w-10" alt="{{ $category->name }}">
+                                        <img src="/{{ $category->images }}" class="img-fluid rounded-start w-10" alt="{{ $category->name }}">
                                     </div>
                                     <div class="col-md-8">
                                         <div class="card-body">
@@ -46,12 +46,10 @@
                         </center>
                     </td>
                     <td>{{ $category->seller->count() }}</td>
-                    <td>{{ $category->product->count() }}</td>
+                    <td>{{ $category->products->count() }}</td>
                     <td>
-                        <a href="" class="badge bg-info"><i
+                        <a href="/category/{{ $category->slug }}" class="badge bg-info"><i
                                 class="bi bi-eye"></i> View</a><br>
-                        <a href="" class="badge bg-warning"><i
-                                class="bi bi-pen-fill"></i></i> Edit</a><br>
                         <form action="" method="post" class="d-inline">
                             <button class="badge bg-danger border-0" onclick="return confirm('Are you sure?')">
                                 <i class="bi bi-trash"></i> Delete</button>

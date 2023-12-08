@@ -44,7 +44,7 @@
                     <td>{{ $produk->category->name }}</td>
                     <td>{{ $produk->payment->count() }}</td>
                     <td>
-                        <a href="" class="badge bg-info"><i
+                        <a href="/products/{{ $produk->slug }}" class="badge bg-info"><i
                                 class="bi bi-eye"></i> View</a><br>
                         <form action="" method="post" class="d-inline">
                             @method('delete')
