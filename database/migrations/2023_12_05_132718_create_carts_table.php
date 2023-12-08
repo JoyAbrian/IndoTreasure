@@ -15,8 +15,7 @@ return new class extends Migration
             $table->id();
             $table->foreignId('user_id');
             $table->foreignId('product_id');
-            $table->integer('stok');
-            $table->float('total_harga');    
+            $table->integer('jumlah');
             $table->timestamps();
         });
     }

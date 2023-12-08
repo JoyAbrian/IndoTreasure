@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Models\Products;
 use App\Http\Requests\StoreProductsRequest;
 use App\Http\Requests\UpdateProductsRequest;
+use App\Models\Wishlist;
+use Illuminate\Http\Request;
 
 class ProductsController extends Controller
 {
@@ -51,9 +53,23 @@ class ProductsController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Products $products)
+    public function wish(Request $request)
     {
-        //
+        Wishlist::create([
+            'user_id' => auth()->user()->id,
+            'product_id' => $request->input('product_id')
+        ]);
+
+        return back();
+    }
+
+    public function show_wish()
+    {
+        return view('wishlist', [
+            "title" => "Wishlist",
+            "search" => "Cari produk lain",
+            "wishlist" => Wishlist::all()->where('user_id', auth()->user()->id)
+        ]);
     }
 
     /**

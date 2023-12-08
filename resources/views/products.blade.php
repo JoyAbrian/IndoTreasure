@@ -36,9 +36,14 @@
                                     class="fw-bold">{{ $product->quantity }}</span></p>
                         </div>
                         <div class="ms-auto">
-                            <a href="/wishlist/{{ $product->id }}" style="color: red"><i
-                                    class="bi bi-heartbreak"></i></a>
-                            <a href="/cart/{{ $product->id }}" style="color: black"><i class="bi bi-cart"></i></a>
+                            <form action="/wish" method="POST">
+                                @csrf
+                                <input type="hidden" name="product_id" value="{{ $product->id }}">
+                                <button type="submit" style="color: red"><i class="bi bi-heartbreak"></i></button>
+                            </form>
+                            <form action="/addCart">
+                                <button type="submit" style="color: black"><i class="bi bi-cart"></i></button>
+                            </form>
                         </div>
                     </div>
                 </div>

@@ -25,6 +25,7 @@ use App\Http\Controllers\RegisterController;
 
 // Guest / Buyer Section
 Route::get('/', [Home::class, 'show_home']);
+Route::post('/', [Home::class, 'show_home']);
 
 Route::get('/category', [CategoryController::class, 'index']);
 Route::get('/category/{category:slug}', [CategoryController::class, 'show']);
@@ -36,7 +37,10 @@ Route::get('/products', [ProductsController::class, 'index']);
 Route::get('/products/{product:slug}', [ProductsController::class, 'show']);
 
 
-Route::get('/food', [FoodController::class, 'index']);
+Route::get('/wishlist', [ProductsController::class, 'show_wish'])->middleware('auth');
+Route::Post('/wish', [ProductsController::class, 'wish'])->middleware('auth');
+
+Route::get('/handle', [FoodController::class, 'index']);
 
 Route::get('/payments', [PaymentsController::class, 'index']);
 // Route::get('/top-up', function () {
@@ -204,10 +208,11 @@ Route::get('/payments', [PaymentsController::class, 'index']);
 //     ]);
 // }); 
 
-Route::get('/login', [LoginController::class, 'index']);
+Route::get('/login', [LoginController::class, 'index'])->middleware('guest');
 Route::Post('/login', [LoginController::class, 'authenticate']);
+Route::Post('/logout', [LoginController::class, 'logout'])->middleware('auth');
 
-Route::get('/register', [RegisterController::class, 'index']);
+Route::get('/register', [RegisterController::class, 'index'])->middleware('guest');
 Route::post('/register', [RegisterController::class, 'store']);
 
 // Seller Section
