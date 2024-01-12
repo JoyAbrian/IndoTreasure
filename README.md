@@ -1,6 +1,5 @@
+# IndoTreasure - E-Commerce Web Application
 ![logo](https://github.com/JoyAbrian/IndoTreasure/blob/main/public/img/word.png?raw=true)
-<center># IndoTreasure - E-Commerce Web Application</center>
-
 IndoTreasure is a Laravel-based e-commerce web application that allows users to browse, search, and purchase a variety of treasures from Indonesia.
 
 ## Table of Contents
